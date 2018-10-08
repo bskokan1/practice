@@ -1,0 +1,30 @@
+#Pennies for Pay: double the pennies earned for every day worked
+
+#Define variables
+first_pay = 0.01
+total = 0.0
+day = 0
+
+#Request user input for days worked
+days_worked = int(input('Enter number of days of work: '))
+
+#Data input validation 
+while days_worked < 0:
+  #Error Message
+  print('ERROR: Invalid input from user.')
+  #Request user to enter a valid numebr
+  days_worked = int(input('Enter a valid number of days: '))
+  
+#Display table headings
+print('Day\tPay')
+print('-----------')
+
+#Loop to calculate the total pay for each day worked
+for day in range(1, days_worked + 1):
+  #Display the pay amount for each day in the table
+  print(day, '\t', first_pay)
+  #Accumulate the pay for the entire period
+  total += first_pay
+  #Double the penny for each day
+  first_pay *= 2
+print('The total expected salary is: $' + format(total, '0.2f'))
